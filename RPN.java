@@ -1,12 +1,14 @@
 package lab6;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
-public class RPN {
-	public int evalRPN(List<String> tokens) {
-		Stack<Integer> s = new Stack<>(); // create a new stack
+import java.util.List;
+
+public class RPN<T> implements Stack<T> {
+	public int evalRPN(List<String> tokens) throws Exception {
+
+		ArrayStack<Integer> s = new ArrayStack<>(); // create a new ArrayStack, refer to Stack interface and ArrayStack
+													// class for implementation
 		for (String token : tokens) { // loop through the array of strings called tokens, this contains our numbers
 										// and operands
 			if ("+-*/".contains(token)) { // if the token contains an operator
@@ -65,6 +67,30 @@ public class RPN {
 			e.printStackTrace();
 		}
 
+	}
+
+	@Override
+	public void push(T item) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public T pop() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T peek() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean empty() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
